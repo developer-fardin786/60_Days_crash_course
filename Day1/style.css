@@ -1,0 +1,12 @@
+form>label,form>input{
+    margin-top: .5rem;
+}
+#username{
+    margin-left: 2rem;
+}
+#contact_number{
+    margin-left: .35rem;
+}
+#email{
+    margin-left: .9rem;
+}
