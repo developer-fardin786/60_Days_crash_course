@@ -1,3 +1,6 @@
+.student_template{
+    margin-top: 1em;
+}
 form>label,form>input{
     margin-top: .5rem;
 }
