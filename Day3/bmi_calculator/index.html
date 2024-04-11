@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bmi Calculator</title>
+</head>
+<body>
+    <div class="mian_conatiner">
+        <h1>Check your BMI</h1>
+        <p>Enter your weight and height below to check your BMI results</p>
+          <label for="weight">Put your weight in here (KG)</label><br>
+          <input type="text" name="weight" id="weight"><br>
+          <label for="height">And your height in here (CM)</label><br>
+          <input type="text" name="height" id="height"><br>
+          <button onclick="checkBmi()">submit</button>
+          <p id="results"></p>
+    </div>
+</body>
+<script>
+    let results=document.getElementById('results')
+    let weight=document.getElementById('weight')
+    let height=document.getElementById('height')
+    let checkBmi=()=>{
+        let BMI=(weight.value)/(height.value*height.value)
+        if(BMI<=18.4){
+            results.textContent=`Your BMI is ${parseFloat(BMI).toFixed(2)} which means You are UnderWeight`
+        }else if(BMI>=18.5&&BMI<=24.9){
+            results.textContent=`Your BMI is ${parseFloat(BMI).toFixed(2)} which means You are NormalWeight`
+
+        }else if(BMI >= 25 && BMI <= 29.9){
+            results.textContent=`Your BMI is ${parseFloat(BMI).toFixed(2)} which means You are Overweight `
+
+        }else if(BMI >= 30){
+            results.textContent=`Your BMI is ${parseFloat(BMI).toFixed(2)} which means You are Obese  `
+
+        }
+      
+    }
+
+</script>
+</html>
