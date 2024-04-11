@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Masai Investor</title>
+</head>
+
+<body>
+    <div>
+        <h1>Strategic Investors</h1>
+        <div id="main_container"></div>
+    </div>
+</body>
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    #main_container {
+        width: 80%;
+        margin: auto;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .profile_card {
+        /* border: 1px solid black; */
+        width: 18rem;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        /* border-radius: 5px; */
+    }
+
+    .profile_card>img {
+        width: 100%;
+        border-radius: 5px;
+
+    }
+
+    .profile_card>p {
+        text-align: center;
+        font-size: 1.4rem;
+        color: rgb(97, 94, 94);
+    }
+</style>
+<script>
+    let InvestorDetails = [
+        {
+            name: "Vijay Sekhar Sharma",
+            position: "Founder",
+            profile_img: 'https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg',
+            company_img: 'https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg'
+        },
+        {
+            name: "Vijay Sekhar Sharma",
+            position: "Founder",
+            profile_img: 'https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg',
+            company_img: 'https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg'
+        },
+        {
+            name: "Vijay Sekhar Sharma",
+            position: "Founder",
+            profile_img: 'https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg',
+            company_img: 'https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg'
+        },
+        {
+            name: "Vijay Sekhar Sharma",
+            position: "Founder",
+            profile_img: 'https://masai-website-images.s3.ap-south-1.amazonaws.com/Vijay_Shekhar_Sharma_Paytm_96f52579b8.jpg',
+            company_img: 'https://masai-website-images.s3.ap-south-1.amazonaws.com/paytm_rect_06df45a24f.svg'
+        }
+    ]
+    let main_container = document.getElementById('main_container')
+
+
+
+    InvestorDetails.map((el) => {
+        let div = document.createElement('div')
+        div.setAttribute('class', "profile_card")
+        let img = document.createElement('img')
+        img.src = el.profile_img
+        let inv_name = document.createElement('p')
+        inv_name.innerText = el.name
+        let inv_position = document.createElement('p')
+        inv_position.innerText = el.position
+        let comp_img = document.createElement('img')
+        comp_img.src = el.company_img
+        div.append(img, inv_name, inv_position, comp_img)
+        main_container.append(div)
+    })
+</script>
+
+</html>
