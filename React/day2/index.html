@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>JSX and Babel</title>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <script type="text/babel">
+    // Your JSX code here
+// simple jsx element
+    let rootElement = document.getElementById('root')
+    // // creating jsx element
+    // let paragraph = <p>Seize the day</p>
+    // // rendering elelment
+    // ReactDOM.render(paragraph, rootElement)
+
+    //Dynamic Content in JSX
+    let dynamicText="Seize the day"
+    // creating dynamic jsx element
+    let paragraph2=<p>{dynamicText}</p>
+    // rendering element 
+    ReactDOM.render(paragraph2,rootElement)
+
+    // Conditional Rendering in JSX
+    let paragraph3=<p>Masai School</p>
+    let paragraph4=<p>Prepleaf By Masai School</p>
+    // boolean value
+    let isMasai=true
+     // when boolean value is true
+     let element=isMasai?paragraph3:paragraph4;
+     ReactDOM.render(element,rootElement)
+    
+  </script>
+</body>
+
+</html>
