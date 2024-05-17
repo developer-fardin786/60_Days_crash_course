@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic List Rendering</title>
+</head>
+<style>
+    .galleryContainer {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .galleryContainer>div {
+        height: 150px;
+        border: 1px solid black;
+    }
+</style>
+
+<body>
+    <div id="root"></div>
+    <script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+    <script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // Your ItemList component code will go here
+        function Gallery({ children }) {
+            // Rest of your code..
+            return <div className="galleryContainer">
+                {children}
+            </div>
+        }
+        const Image = ({ src, alt }) => {
+            return (
+                <>
+                    <div>
+                        <img src={src} alt={alt} />
+
+                    </div>
+                </>
+            )
+        }
+
+        const App = () => {
+            return (
+                <Gallery>
+                    <Image src='https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg' alt="masai logo" />
+                    <Image src='https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg' alt="masai logo" />
+                    <Image src='https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg' alt="masai logo" />
+                    <Image src='https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg' alt="masai logo" />
+                    <Image src='https://students.masaischool.com/static/media/masai-logo.e5c8801d4f26d2da036ec9e4b93cb202.svg' alt="masai logo" />
+                </Gallery>
+            )
+        }
+        // rendering App component in UI
+        let rootElement = document.getElementById('root')
+        let reactRoot = ReactDOM.createRoot(rootElement)
+        reactRoot.render(<App />)
+
+    </script>
+</body>
+
+</html>
