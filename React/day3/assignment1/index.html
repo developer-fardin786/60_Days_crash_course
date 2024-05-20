@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Template</title>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+<script src="https://www.unpkg.com/react@18.2.0/umd/react.development.js"></script>
+<script src="https://www.unpkg.com/react-dom@18.2.0/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+<script type="text/babel">
+    // Your  code will go here
+    const ColorInput = () => {
+        let [color, setColor] = React.useState('')
+        let [isValidColor, setValidColor] = React.useState(true)
+        const handleColor = (e) => {
+            let value = e.target.value
+            setColor(value)
+            setValidColor(/^#[0-9A-Fa-f]{6}$/.test(value))
+
+        }
+        // console.log(color)
+        // console.log(isValidColor)
+        return (
+            <>
+                <div>
+                    <input type="text" name="color" id="color" value={color} onChange={handleColor} placeholder="Enter hex color value" maxLength="7" />
+                </div>
+                <div style={{
+                    width: "400px",
+                    height: "350px",
+                    backgroundColor: isValidColor ? color : 'transparent',
+                    border: '1px solid black'
+                }}>
+                    {!isValidColor && <p>Please Enter valid hex color </p>}
+                </div>
+
+            </>
+        )
+    }
+    const App = () => {
+        return (
+            <>
+                <ColorInput />
+            </>
+        )
+    }
+
+    let reactRoot = ReactDOM.createRoot(document.getElementById('root'))
+    reactRoot.render(<App />)
+</script>
+
+</html>
