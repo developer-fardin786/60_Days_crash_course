@@ -81,6 +81,8 @@ if (argv.length < 1) {
         } else {
             generateRandomNumber(parseInt(argv[1]))
         }
+    }else{
+        console.log('invalid operation')
     }
 
 }
